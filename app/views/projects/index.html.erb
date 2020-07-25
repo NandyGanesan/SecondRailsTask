@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h3 class="text-center">PROJECT DETAILS</h3>
+<%= link_to "Add Project" ,new_project_path(@department), :class => 'btn btn-outline-primary' %>
+<br/>
+<% @project.each do |project| %>
+<div class="card body">
+  <h3> Project Name : <%= project.projectname %></h3>
+  <%= link_to "Read More" ,project_path(project), :class => 'btn btn-outline-primary' %>
+</div>
+<br/>
+<% end %>

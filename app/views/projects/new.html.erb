@@ -1,0 +1,24 @@
+<h3 class="text-center">Add New User</h3>
+<%= form_with model: @project do |f| %>
+  <% if @project.errors.any? %>
+    <% @project.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+<p>
+  <%= f.label :projectname,"Project Name" %><br>
+  <%= f.text_field :projectname , required: true %>
+</p>
+<p>
+  <%= f.label :title,"Title" %><br>
+  <%= f.text_field :title , required: true %>
+</p>
+<p>
+  <%= f.label :department,"Department" %>
+  <%= f.collection_select :department_id, Department.order(:departmentname),:id,:departmentname, :prompt => 'Select' %>
+</p>
+<p>
+  <%= f.submit("Add Project", {:class => 'btn btn-outline-primary'}) %>
+</p>
+<% end %>
+<br/>

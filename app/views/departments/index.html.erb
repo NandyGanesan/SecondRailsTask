@@ -1,0 +1,11 @@
+<h3 class="text-center">DEPARTMENT DETAILS</h3>
+<%= link_to "Add Department" ,new_department_path, :class => 'btn btn-outline-primary' %>
+<br/>
+<% @department.each do |department| %>
+<div class="card body">
+  <h3> Department Name : <%= department.departmentname %></h3>
+  <%= link_to "Read More" ,department_path(department), :class => 'btn btn-outline-primary' %>
+</div>
+<br>
+<% end %>
+<br/>

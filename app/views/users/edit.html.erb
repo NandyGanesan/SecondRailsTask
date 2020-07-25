@@ -1,0 +1,18 @@
+<h3 class="text-center">Edit User Detail</h3>
+<%= form_for @user, url: user_path do |f| %>
+<p>
+  <%= f.label :name ,"User Name" %><br>
+  <%= f.text_field :name , required: true %>
+</p>
+<p>
+  <%= f.label :gender,"Gender" %><br>
+  <%= f.text_field :gender , required: true %>
+</p>
+<p>
+  <%= f.label :department,"Department" %>
+  <%= f.collection_select :department_id, Department.order(:departmentname),:id,:departmentname, :prompt => 'Select' %>
+</p>
+<p>
+  <%= f.submit("Update User",{:class => 'btn btn-outline-primary'}) %>
+</p>
+<% end %>

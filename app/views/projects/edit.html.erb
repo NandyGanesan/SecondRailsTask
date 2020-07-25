@@ -1,0 +1,18 @@
+<h3 class="text-center">Edit Project Detail</h3>
+<%= form_for @project, url: project_path do |f| %>
+<p>
+  <%= f.label :projectname ,"Project Name" %><br>
+  <%= f.text_field :projectname , required: true %>
+</p>
+<p>
+  <%= f.label :title,"Title" %><br>
+  <%= f.text_field :title , required: true %>
+</p>
+<p>
+  <%= f.label :department,"Department" %>
+  <%= f.collection_select :department_id, Department.order(:departmentname),:id,:departmentname, :prompt => 'Select' %>
+</p>
+<p>
+  <%= f.submit("Update Project",{:class => 'btn btn-outline-primary'}) %>
+</p>
+<% end %>

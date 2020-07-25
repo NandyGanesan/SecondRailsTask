@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+<h3 class="text-center">USER DETAILS</h3>
+<%= link_to "Add User" ,new_user_path, :class => 'btn btn-outline-primary' %>
+<br/>
+<% @user.each do |user| %>
+<div class="card body">
+  <h3> User Name : <%= user.name %></h3>
+  <%= link_to "Read More" ,user_path(user), :class => 'btn btn-outline-primary' %>
+</div>
+<br/>
+<% end %>
