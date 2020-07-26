@@ -5,10 +5,14 @@ Rails.application.routes.draw do
 
   get 'departments/mainpage'
 
+  get 'user_project_details/new', as: 'new'
+
   resources :users
 
   resources :departments
 
   resources :projects
+
+  resources :user_project_details
 
 end

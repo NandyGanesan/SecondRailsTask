@@ -1,0 +1,13 @@
+<%= form_with model: @user_project_detail do |f| %>
+<p>
+  <%= f.label :project_id,"Project" %>
+  <%= f.collection_select :project_id, Project.order(:projectname), :id, :projectname, :prompt => 'Select' %>
+</p>
+<p>
+  <%= f.label :user_id,"User" %>
+  <%= f.collection_select :user_id, User.order(:name), :id, :name, :prompt => 'Select' %>
+</p>
+<p>
+  <%= f.submit("Add Project for User", {:class => 'btn btn-outline-primary'}) %>
+</p>
+<% end %>

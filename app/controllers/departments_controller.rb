@@ -23,6 +23,8 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = Department.find(params[:id])
+    @user = User.where(:department_id => @department.id).select('name,gender')
+    @project = Project.where(:department_id => @department.id).select('projectname,title')
   end
 
   def edit

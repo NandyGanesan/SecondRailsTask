@@ -4,3 +4,20 @@
 <%= link_to "Delete", department_path(@department), method: :delete, data: {confirm: 'Are You Sure?'}, :class => 'btn btn-outline-danger' %>
 </div>
 <hr>
+<h3>User Details</h3>
+<% @user.each do |user| %>
+<div class="card body">
+  <h4> User Name : <%= user.name %></h4>
+  <p>Gender : <%= user.gender %></p>
+</div>
+<br/>
+<% end %>
+<hr>
+<h3>Project Details</h3>
+<% @project.each do |project| %>
+<div class="card body">
+  <h4> Project Name : <%= project.projectname %></h4>
+  <p> Title : <%= project.title %></p>
+</div>
+<br/>
+<% end %>

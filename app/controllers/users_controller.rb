@@ -21,8 +21,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @department = Department.find_by(:id => @user.department_id)
-    @project_id = UserProjectDetail.where('user_id=@user.user_id').select('project_id')
-    @projects = Project.where(:id => @project_id)
+    @project = UserProjectDetail.where(user_id: @user.id).pluck(:project_id)
+    @projects = Project.where(:id => @project).select('id,projectname,title')
   end
 
   def edit

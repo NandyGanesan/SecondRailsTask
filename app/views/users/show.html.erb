@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <div class="container">
 <h3>User Name : <%= @user.name %></h3>
 <h3>Gender : <%= @user.gender %></h3>
@@ -6,9 +7,11 @@
 <%= link_to "Delete", user_path(@user), method: :delete, data: {confirm: 'Are You Sure?'}, :class => 'btn btn-outline-danger' %>
 </div>
 <hr>
+<h3><%= @user.name %>- Project Details</h3>
 <% @projects.each do |project| %>
 <div class="card body">
-  <h3> Project Name : <%= project.projectname %></h3>
+  <h4> Project Name : <%= project.projectname %></h4>
+  <p> Title : <%= project.title %> </p>
 </div>
 <br/>
 <% end %>
