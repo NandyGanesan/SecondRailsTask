@@ -22,7 +22,7 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
       @department = Department.find_by(:id => @project.department_id)
       @user = UserProjectDetail.where(project_id: @project.id).pluck(:user_id)
-      @users = User.where(:id => @user).select('name,gender')
+      @users = User.where(:id => @user).select('id,name,gender')
     end
 
     def edit

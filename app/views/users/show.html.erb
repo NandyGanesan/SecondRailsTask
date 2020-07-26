@@ -11,7 +11,11 @@
 <% @projects.each do |project| %>
 <div class="card body">
   <h4> Project Name : <%= project.projectname %></h4>
-  <p> Title : <%= project.title %> </p>
+  <p> Title : <%= project.title %>
+
+      <%= link_to '[X]', method: :delete,
+                              data: { confirm: 'Are you sure?'} %>
+  </p>
 </div>
 <br/>
 <% end %>

@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   get 'user_project_details/new', as: 'new'
 
+  delete 'user_project_details/destroy'
+
   resources :users
 
   resources :departments
