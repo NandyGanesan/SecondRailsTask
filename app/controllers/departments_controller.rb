@@ -5,6 +5,10 @@ class DepartmentsController < ApplicationController
 
   def index
     @department = Department.all
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def new

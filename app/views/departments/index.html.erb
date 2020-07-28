@@ -2,6 +2,10 @@
 <h3 class="text-center">DEPARTMENT DETAILS</h3>
 <%= link_to "Add Department" ,new_department_path, :class => 'btn btn-outline-primary' %>
 <br/>
+<div class="text-center">
+<%= link_to 'Download as .xlsx for Departments', departments_path(format: :xlsx), :class => 'btn btn-outline-primary' %>
+</div>
+<br/>
 <% @department.each do |department| %>
 <div class="card body">
   <h3> Department Name : <%= department.departmentname %></h3>

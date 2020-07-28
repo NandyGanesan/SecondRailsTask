@@ -1,0 +1,6 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Departments") do |sheet|
+  @department.each do |department|
+    sheet.add_row [department.departmentname]
+  end
+end

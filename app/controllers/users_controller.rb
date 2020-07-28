@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def index
     @user = User.all
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def new

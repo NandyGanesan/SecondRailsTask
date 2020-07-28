@@ -16,8 +16,8 @@ class UserProjectDetailsController < ApplicationController
   end
 
   def destroy
-    @user_id = User.find(params[:user_id])
-    @project_id = Project.find(params[:project_id])
+    @user_id = User.find(params[:id => :user_id])
+    @project_id = Project.find(params[:id => :project_id])
     UserProjectDetail.where(:user_id => @user_id).where(:project_id => @project_id).destroy
   end
 

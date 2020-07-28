@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
     def index
-      @project = Project.all
+      @project = Project.order('created_at DESC')
+      respond_to do |format|
+        format.html
+        format.xlsx
+      end
     end
 
     def new
@@ -43,6 +47,10 @@ class ProjectsController < ApplicationController
       @project = Project.find(params[:id])
       @project.destroy
       redirect_to projects_path,  notice: 'User Detail deleted successfully.'
+    end
+
+    def display
+
     end
 
   private def project_params

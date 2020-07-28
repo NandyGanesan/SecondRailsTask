@@ -2,6 +2,10 @@
 <h3 class="text-center">USER DETAILS</h3>
 <%= link_to "Add User" ,new_user_path, :class => 'btn btn-outline-primary' %>
 <br/>
+<div class="text-center">
+<%= link_to 'Download as .xlsx for Users', users_path(format: :xlsx), :class => 'btn btn-outline-primary' %>
+</div>
+<br/>
 <% @user.each do |user| %>
 <div class="card body">
   <h3> User Name : <%= user.name %></h3>
